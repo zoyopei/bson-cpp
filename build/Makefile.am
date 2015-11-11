@@ -44,11 +44,11 @@ test_RUNS = $(test_PROGRAMS:%=run_%)
 
 test_bsonobj_SOURCES = test/test_bsonobj.cpp test/framework.cpp
 
-AM_CPPFLAGS = -O0 -Wall -Werror -ggdb -Isrc $(BOOST_CPPFLAGS)
+AM_CPPFLAGS = -O0 -Wall -Werror -fno-strict-aliasing -ggdb -Isrc $(BOOST_CPPFLAGS)
 AM_LDFLAGS = $(BOOST_LDFLAGS) \
              $(BOOST_PROGRAM_OPTIONS_LIB) \
              $(BOOST_THREAD_LIB)
-LDADD = $(BOOST_THREAD_LIBS) libbsoncpp.la -lboost_system-mt
+LDADD = $(BOOST_THREAD_LIBS) libbsoncpp.la -lboost_system-mt -lboost_thread-mt -lrt
 LIBS = $(BOOST_THREAD_LIBS)
 
 #dist_bsoncpp_SCRIPTS = autogen.sh

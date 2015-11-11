@@ -237,6 +237,14 @@ namespace bson {
             _b.appendNum(n);
             return *this;
         }
+	
+	BSONObjBuilder& append(const StringData& fieldName, unsigned long n) {
+            return append(fieldName, (long long) n);
+        }
+	
+	BSONObjBuilder& append(const StringData& fieldName, long n) {
+            return append(fieldName, (long long) n);
+        }
 
         /** appends a number.  if n < max(int)/2 then uses int,
           otherwise long long */

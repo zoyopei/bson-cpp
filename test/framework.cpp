@@ -18,7 +18,7 @@
 
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/signals.hpp>
+#include <boost/signals2.hpp>
 #include <boost/system/error_code.hpp>
 
 #include "framework.h"
